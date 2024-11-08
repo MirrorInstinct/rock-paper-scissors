@@ -68,11 +68,25 @@ function playRound(humanChoice, computerChoice) {
             }
             break;
         default:
-            console.log("Invalid choice.");
+            console.log("Invalid choice. Please restart the browser.");
     }
 }
 
-playRound();
+function playGame() {
+    while (humanScore < 5 && computerScore < 5) {
+        playRound();
+        console.log("Human: " + humanScore);
+        console.log("Computer: " + computerScore); 
+    }
 
-console.log("Human: " + humanScore);
-console.log("Computer: " + computerScore); 
+    if (humanScore === 5) {
+        alert("Congratulations! You won the game!"); 
+    } 
+    else { 
+        alert("Sorry, the computer won the game."); 
+    }
+}
+
+playGame();
+
+
